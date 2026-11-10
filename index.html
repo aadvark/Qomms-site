@@ -124,6 +124,7 @@ h1 { margin: 0; font-size: clamp(36px, 5vw, 54px); line-height: 1.05; font-weigh
 .beta-note svg { flex: none; margin-top: 1px; color: var(--indigo-text); }
 .beta-note strong { display: block; font-weight: 600; margin-bottom: 2px; }
 .beta-note span { color: var(--muted); }
+.version { font-weight: 600; color: var(--ink); }
 .beta-list { margin: 16px 0 0; padding: 16px 18px 16px 36px; border-radius: 16px; background: var(--tint); color: var(--muted); font-size: 14.5px; line-height: 1.5; }
 .beta-list li { margin: 3px 0; }
 .beta-list strong { color: var(--ink); font-weight: 600; }
@@ -273,7 +274,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v6.5L4.5 18A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.700-3L14 8.5V2M8.5 2h7M7 15h10"/></svg>
           <div><strong>Qomms is in public beta.</strong><span>Expect bugs, missing features and frequent updates. Please don't rely on it as your only way to reach people yet.</span></div>
         </div>
-        <p class="meta">For Android 8 or later. Qomms is an unofficial app and isn't made or endorsed by Telegram.</p>
+        <p class="meta"><strong class="version" data-version>Latest beta</strong> · For Android 8 or later. Qomms is an unofficial app and isn't made or endorsed by Telegram.</p>
       </div>
 
       <div class="phone" role="img" aria-label="Qomms chat screen, with a video casting to the living room TV while the conversation continues">
@@ -366,11 +367,38 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Kith + Keen</span>
+    <span>© 2026 Kith + Keen · <span data-version>Latest beta</span></span>
     <span>Beta software, provided as is while in testing. Unofficial client built on the Telegram API. Not affiliated with or endorsed by Telegram.</span>
   </div>
 </footer>
 <noscript><style>.menu-button { display: none !important; } .desktop-nav { display: flex !important; } .desktop-nav a:not(.button) { display: none; }</style></noscript>
+<script>
+// Shows the current version, read from the latest release, so it never needs editing by hand.
+(function () {
+  var KEY = 'qomms-version';
+  function show(release) {
+    var number = (release.tag_name || '').replace(/^v/, '');
+    if (!number) return;
+    var date = release.published_at ? new Date(release.published_at).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+    var text = 'Version ' + number + (date ? ', ' + date : '');
+    document.querySelectorAll('[data-version]').forEach(function (el) { el.textContent = text; });
+  }
+  try {
+    var cached = JSON.parse(sessionStorage.getItem(KEY) || 'null');
+    if (cached) { show(cached); return; }
+  } catch (e) {}
+  if (!window.fetch) return;
+  fetch('https://api.github.com/repos/aadvark/Qomms-site/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (release) {
+      if (!release) return;
+      var kept = { tag_name: release.tag_name, published_at: release.published_at };
+      try { sessionStorage.setItem(KEY, JSON.stringify(kept)); } catch (e) {}
+      show(kept);
+    })
+    .catch(function () {});
+})();
+</script>
 <script>
 (function () {
   var root = document.documentElement;
