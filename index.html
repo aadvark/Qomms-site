@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Qomms: chat, stream and cast</title>
-<meta name="description" content="Qomms is an unofficial Telegram client for Android with a clean chat interface and a built-in player that streams videos and casts them to your TV.">
+<meta name="description" content="Qomms is an unofficial Telegram client for Android. Videos play straight away with no download first, and cast to a Chromecast or to Qomms Receiver on your Android TV for full control.">
 <meta name="color-scheme" content="light dark">
 <script>
 try { var saved = localStorage.getItem('qomms-theme'); if (saved === 'day' || saved === 'dark' || saved === 'amoled') document.documentElement.setAttribute('data-theme', saved); } catch (e) {}
@@ -262,7 +262,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="wrap">
       <div class="hero-copy">
         <h1>Chat here.<br>Watch it there.</h1>
-        <p class="lede">A clean, quiet way to use Telegram on Android. Play any video from a chat straight away, or send it to your TV and keep talking.</p>
+        <p class="lede">A clean, quiet way to use Telegram on Android. Videos play the moment you tap them, with no download first, even the big ones. Send them to a Chromecast, or to Qomms Receiver on your Android TV for full control, and keep chatting.</p>
         <div class="actions">
           <a class="button" href="https://github.com/aadvark/Qomms-site/releases/latest/download/Qomms.apk">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
@@ -312,11 +312,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="band" id="features">
     <div class="wrap">
       <h2>Your videos, without the waiting</h2>
+      <p class="copy">No downloading first. Tap a video and it plays, on your phone or on your TV.</p>
       <div class="cards">
-        <div class="card"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.500v7l5.500-3.500z"/></svg><h3>Streams straight away</h3><p>Fetches only the part you're watching, with no need to save it first.</p></div>
-        <div class="card"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6M3 12a8 8 0 0 1 8 8M3 16a4 4 0 0 1 4 4M3 20h.01"/></svg><h3>Cast and keep chatting</h3><p>The TV plays while your phone stays free, with controls in a slim bar.</p></div>
-        <div class="card"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h14M4 12h14M4 18h7M17 15v6M14 18h6"/></svg><h3>Queue up the night</h3><p>Pick videos from any chat, put them in order, and let them run.</p></div>
-        <div class="card"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg><h3>Keeps itself current</h3><p>Check for updates and install them from inside the app.</p></div>
+        <div class="card"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8.500v7l5.500-3.500z"/></svg><h3>Plays without downloading</h3><p>Qomms fetches only the part you're watching, so even a 2 GB film starts in seconds. Jump anywhere on the timeline and it picks up from there.</p></div>
+        <div class="card"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6M3 12a8 8 0 0 1 8 8M3 16a4 4 0 0 1 4 4M3 20h.01"/></svg><h3>Cast to Chromecast</h3><p>Send any video to a Chromecast and keep chatting. Formats a Chromecast can't play are converted live as they cast.</p></div>
+        <div class="card"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4M7 13h10"/><circle cx="9" cy="13" r="1.2" fill="currentColor"/></svg><h3>More control with Qomms Receiver</h3><p>On Android TV, get a full timeline, speed, audio track and subtitle buttons on your remote, Up next, and the formats your TV can play.</p></div>
+        <div class="card"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M10.5 9v4l3-2z"/><path d="M10 17h4"/></svg><h3>Control it from anywhere</h3><p>Play, pause and skip from the notification, lock screen or the bar in every chat. Queue up videos, or move to another TV mid-film.</p></div>
       </div>
     </div>
   </section>
@@ -325,11 +326,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <div class="wrap split">
       <div>
         <h2>Quiet by design</h2>
-        <p class="copy">Everything you need to find people and places, and nothing in the way.</p>
+        <p class="copy">Everything you use Telegram for, without the clutter.</p>
         <ul class="ticks">
+          <li>Voice and video calls, and voice chats with video. Show a video call on your TV</li>
+          <li>Secret chats, app lock with fingerprint, locked and hidden chats</li>
+          <li>Several accounts at once, all with notifications</li>
+          <li>Stories, stickers, GIFs, polls, bots and mini apps</li>
           <li>Search chats, people, messages and public channels</li>
-          <li>Start chats by contact, @username or phone number</li>
-          <li>Join or create groups and channels</li>
+          <li>Find friends from your contacts, and link a computer by QR code</li>
+          <li>Downloads, chat export and media sorted by size, length or date</li>
           <li>11 geometric wallpapers, from cubes to houndstooth</li>
         </ul>
       </div>
@@ -351,13 +356,13 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <li><h3>Sign in</h3><p>Use your phone number. Telegram sends the code to your existing app.</p></li>
         </ol>
         <div class="tv" id="tv">
-          <div><h3>Have an Android TV?</h3><p>Qomms Receiver plays formats a Chromecast can't, if your TV can decode them. Use it on your home Wi-Fi.</p></div>
+          <div><h3>Have an Android TV?</h3><p>Qomms Receiver gives you more control than a Chromecast: a timeline and speed, audio and subtitle buttons on your remote, Up next, and formats a Chromecast can't play. Install it on the TV, then pick it in Qomms or type the code it shows.</p></div>
           <a class="button quiet" href="https://github.com/aadvark/Qomms-site/releases/latest/download/Qomms-Receiver.apk">Download Qomms Receiver beta</a>
         </div>
       </div>
       <ul class="beta-list" aria-label="What to expect from the beta">
         <li><strong>Things will break.</strong> Some screens and features are still being built or tested.</li>
-        <li><strong>Not everything is here yet.</strong> Calls, photo and voice playback in chats, and some settings are still to come.</li>
+        <li><strong>Newer features are still settling in.</strong> Calls, voice chats and the TV controls are new and still being tested on more phones and TVs.</li>
         <li><strong>Updates come often.</strong> Qomms offers each new version when you open it.</li>
         <li><strong>Your chats stay on Telegram.</strong> If Qomms misbehaves, your messages are still in Telegram's own apps.</li>
       </ul>
